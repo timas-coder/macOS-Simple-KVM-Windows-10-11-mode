@@ -18,7 +18,7 @@ qemu-img create -f qcow2 MacOS.qcow2 64G
 ```
 
 
-and add it to the end of `basic.sh`:
+and add it to the end of `basic.sh`: < yes the linux version
 ```
     -drive id=SystemDisk,if=none,file=MacOS.qcow2 \
     -device ide-hd,bus=sata.4,drive=SystemDisk \
