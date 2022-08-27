@@ -7,7 +7,7 @@ you will need pip installed and developer mode enabled
 ## Step 1
 Run `jumpstart.bat` to download installation media for macOS (internet required). The default installation uses Catalina, but you can choose which version to get by adding either `--high-sierra`, `--mojave`, or `--catalina`. For example:
 ```
-./jumpstart.sh --mojave
+./jumpstart.cmd --mojave
 ```
 > Note: You can skip this if you already have `BaseSystem.img` downloaded. If you have `BaseSystem.dmg`, you will need to convert it with the `dmg2img` tool in tools.
 
