@@ -5,17 +5,18 @@ New to macOS? Check [the FAQs.](docs/FAQs.md)
 ## Getting Started
 you will need pip installed and developer mode enabled 
 ## Step 1
-Run `jumpstart.bat` to download installation media for macOS (internet required). The default installation uses Catalina, but you can choose which version to get by adding either `--high-sierra`, `--mojave`, or `--catalina`. For example:
+Run `jumpstart-(your os).cmd` to download installation media for macOS (internet required).I have made it user-friendly (who wants to use a command promt) 
 ```
-./jumpstart.cmd --mojave
+jumpstart-mojave.cmd
 ```
 > Note: You can skip this if you already have `BaseSystem.img` downloaded. If you have `BaseSystem.dmg`, you will need to convert it with the `dmg2img` tool in tools.
 
 ## Step 2
-Create an empty hard disk using `qemu-img`, changing the name and size to preference:
+Create an empty hard disk using `qemu-img`, changing the name and size to preference: ()
 ```
 qemu-img create -f qcow2 MacOS.qcow2 64G
 ```
+
 
 and add it to the end of `basic.sh`:
 ```
@@ -31,7 +32,7 @@ Hasent been ported yet :(
 
 ## Step 2b (Headless Systems) Not Tested
 If you're using a cloud-based/headless system, you can use `headless.sh` to set up a quick VNC instance. Settings are defined through variables as seen in the following example. VNC will start on port `5900` by default.
-
+```
 HEADLESS=1 MEM=1G CPUS=2 SYSTEM_DISK=MyDisk.qcow2 ./headless.sh
 ```
 Am Not Testing This
