@@ -3,7 +3,7 @@ Please do not fork unless you have premission from me
 New to macOS? Check [the FAQs.](docs/FAQs.md)
 
 ## Getting Started
-you will need pip installed and developer mode enabled 
+you will need pip ,git or msys2 installed and developer mode enabled 
 ## Step 1
 Run `jumpstart-(your os).cmd` to download installation media for macOS (internet required).I have made it user-friendly (who wants to use a command promt) 
 ```
@@ -12,7 +12,7 @@ jumpstart-mojave.cmd
 > Note: You can skip this if you already have `BaseSystem.img` downloaded. If you have `BaseSystem.dmg`, you will need to convert it with the `dmg2img` tool in tools.
 
 ## Step 2
-Create an empty hard disk using `qemu-img`, changing the name and size to preference: ()
+Create an empty hard disk using `qemu-img` ,the name has to be MacOS
 ```
 qemu-img create -f qcow2 MacOS.qcow2 64G
 ```
