@@ -1,0 +1,1 @@
+ubuntu run ./jumpstart.sh --mojave

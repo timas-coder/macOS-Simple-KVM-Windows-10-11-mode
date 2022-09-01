@@ -1,0 +1,1 @@
+ubuntu run qemu-img create -f qcow2 MyDisk.qcow2 64G

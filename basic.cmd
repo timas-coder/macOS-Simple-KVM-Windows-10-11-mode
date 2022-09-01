@@ -1,0 +1,1 @@
+ubuntu run sudo ./basic.sh
