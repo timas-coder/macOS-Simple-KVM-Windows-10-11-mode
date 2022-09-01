@@ -1,49 +1,38 @@
 # macOS-Simple-KVM
-Documentation to set up a simple macOS VM in QEMU, accelerated by KVM.
 
-By [@FoxletFox](https://twitter.com/foxletfox), and the help of many others. Find this useful? You can donate [on Coinbase](https://commerce.coinbase.com/checkout/96dc5777-0abf-437d-a9b5-a78ae2c4c227) or [Paypal!](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=QFXXKKAB2B9MA&item_name=macOS-Simple-KVM).
-
-New to macOS and KVM? Check [the FAQs.](docs/FAQs.md)
 
 ## Getting Started
-You'll need a Linux system with `qemu` (3.1 or later), `python3`, `pip` and the KVM modules enabled. A Mac is **not** required. Some examples for different distributions:
-
+Ubuntu wsl version installed 
+Then run
 ```
-sudo apt-get install qemu-system qemu-utils python3 python3-pip  # for Ubuntu, Debian, Mint, and PopOS.
-sudo pacman -S qemu python python-pip python-wheel  # for Arch.
-sudo xbps-install -Su qemu python3 python3-pip   # for Void Linux.
-sudo zypper in qemu-tools qemu-kvm qemu-x86 qemu-audio-pa python3-pip  # for openSUSE Tumbleweed
-sudo dnf install qemu qemu-img python3 python3-pip # for Fedora
-sudo emerge -a qemu python:3.4 pip # for Gentoo
+install.cmd
 ```
-
-## Step 1
-Run `jumpstart.sh` to download installation media for macOS (internet required). The default installation uses Catalina, but you can choose which version to get by adding either `--high-sierra`, `--mojave`, or `--catalina`. For example:
+## Step 1 you can skip this step if you have basesystem.img installed
+Run `download ------.cmd or bat` to download installation media for macOS (internet needed). The default installation uses Catalina, but you can choose which version to get by opening mojave ,highsierra and catalina For example:
 ```
-./jumpstart.sh --mojave
+download mojave.cmd
 ```
-> Note: You can skip this if you already have `BaseSystem.img` downloaded. If you have `BaseSystem.dmg`, you will need to convert it with the `dmg2img` tool.
 
 ## Step 2
 Create an empty hard disk using `qemu-img`, changing the name and size to preference:
 ```
-qemu-img create -f qcow2 MyDisk.qcow2 64G
+qemu-img.cmd
 ```
 
-and add it to the end of `basic.sh`:
+and add it to the end of `basic.sh`the linux ver
 ```
     -drive id=SystemDisk,if=none,file=MyDisk.qcow2 \
     -device ide-hd,bus=sata.4,drive=SystemDisk \
 ```
 > Note: If you're running on a headless system (such as on Cloud providers), you will need `-nographic` and `-vnc :0 -k en-us` for VNC support.
 
-Then run `basic.sh` to start the machine and install macOS. Remember to partition in Disk Utility first!
+Then run `basic.cmd` to start the machine and install macOS. Remember to partition in Disk Utility first!
 
-## Step 2a (Virtual Machine Manager)
+## Step 2a (Virtual Machine Manager)not inported yet
 1. If instead of QEMU, you'd like to import the setup into Virt-Manager for further configuration, just run `sudo ./make.sh --add`.
 2. After running the above command, add `MyDisk.qcow2` as storage in the properties of the newly added entry for VM.
 
-## Step 2b (Headless Systems)
+## Step 2b (Headless Systems)not imported yet
 If you're using a cloud-based/headless system, you can use `headless.sh` to set up a quick VNC instance. Settings are defined through variables as seen in the following example. VNC will start on port `5900` by default.
 ```
 HEADLESS=1 MEM=1G CPUS=2 SYSTEM_DISK=MyDisk.qcow2 ./headless.sh
