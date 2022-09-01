@@ -1,31 +1,28 @@
 # macOS-emulator version 1 (Still In Testing)
-Please do not fork unless you have premission from me
+This A Fork For macos-simple-kvm (https://github.com/foxlet/macOS-Simple-KVM)
 New to macOS? Check [the FAQs.](docs/FAQs.md)
 
 ## Getting Started
-you will need pip ,git or msys2 installed and developer mode enabled 
+You Will Need WSL UBUNTU, DEBAIN on from the microsoft store
+Then open
+```
+install.cmd
+```
 ## Step 1
-Run `jumpstart-(your os).cmd` to download installation media for macOS (internet required).I have made it user-friendly (who wants to use a command promt) 
+open download (os ver) to download installation media for macOS (internet required).I have made it user-friendly (who wants to use a command promt) 
 ```
 jumpstart-mojave.cmd
 ```
 > Note: You can skip this if you already have `BaseSystem.img` downloaded. If you have `BaseSystem.dmg`, you will need to convert it with the `dmg2img` tool in tools.
 
 ## Step 2
-Create an empty hard disk using `qemu-img` ,the name has to be MacOS
+Create an empty hard disk using `qemu-img` ,to change the size edit the file ,if you change the name it may not work
 ```
-qemu-img create -f qcow2 MacOS.qcow2 64G
-```
-
-
-and add it to the end of `basic.sh`: < yes the linux version
-```
-    -drive id=SystemDisk,if=none,file=MacOS.qcow2 \
-    -device ide-hd,bus=sata.4,drive=SystemDisk \
+qemu-ing.cmd
 ```
 > Note: If you're running on a headless system (such as on Cloud providers), you will need `-nographic` and `-vnc :0 -k en-us` for VNC support.
 
-Then run `basic.sh` to start the machine and install macOS. Remember to partition in Disk Utility first!
+Then run `basic.cmd` to start the machine and install macOS. Remember to partition in Disk Utility first!
 
 ## Step 2a (Virtual Machine Manager)
 Hasent been ported yet :(
