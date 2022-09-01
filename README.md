@@ -3,7 +3,7 @@ This A Fork For macos-simple-kvm (https://github.com/foxlet/macOS-Simple-KVM)
 New to macOS? Check [the FAQs.](docs/FAQs.md)
 
 ## Getting Started
-You Will Need WSL UBUNTU, DEBAIN on from the microsoft store
+You Will Need WSL UBUNTU, DEBAIN(support in beta 2) on from the microsoft store
 Then open
 ```
 install.cmd
