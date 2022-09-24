@@ -1,14 +1,18 @@
-# macOS-Simple-KVM
+# macOS-Simple-KVM 
 
 
 ## Getting Started
-Ubuntu wsl version installed 
+Just run 
+```
+install.ps1
+```
 Then run
 ```
 install.cmd
 ```
+Your ready now
 ## Step 1 you can skip this step if you have basesystem.img installed
-Run `download ------.cmd or bat` to download installation media for macOS (internet needed). The default installation uses Catalina, but you can choose which version to get by opening mojave ,highsierra and catalina For example:
+To download installation media for macOS (internet requied). The default installation uses Catalina, but you can choose which version to get by opening mojave ,highsierra and catalina For example:
 ```
 download mojave.cmd
 ```
@@ -18,8 +22,7 @@ Create an empty hard disk using `qemu-img`, changing the name and size to prefer
 ```
 qemu-img.cmd
 ```
-
-and add it to the end of `basic.sh`the linux ver
+add this to the end of `basic.sh`
 ```
     -drive id=SystemDisk,if=none,file=MyDisk.qcow2 \
     -device ide-hd,bus=sata.4,drive=SystemDisk \
