@@ -1,1 +1,1 @@
-ubuntu run ./jumpstart.sh --mojave
+ubuntu run sudo ./jumpstart.sh --mojave
